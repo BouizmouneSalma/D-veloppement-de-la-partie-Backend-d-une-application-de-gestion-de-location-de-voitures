@@ -46,7 +46,7 @@
                 </table>
             </div> 
             <!-- table de voitures -->
-            <div id="voitures" role="tabpanel" class="bg-white p-4 rounded-lg shadow">
+            <div id="voitures" role="tabpanel" class="hidden bg-white p-4 rounded-lg shadow">
             <button class="bg-blue-500 text-white py-2 px-4 rounded mb-4" >Ajouter une Voiture</button>
                 <table class="table-auto w-full">
                     <thead>
@@ -69,7 +69,7 @@
                 </table>
             </div>
             <!-- Contrats Table -->
-            <div id="contrats" role="tabpanel" class=" bg-white p-4 rounded-lg shadow">
+            <div id="contrats" role="tabpanel" class="hidden bg-white p-4 rounded-lg shadow">
             <button class="bg-blue-500 text-white py-2 px-4 rounded mb-4">Ajouter un Contrat</button>
                 <table class="table-auto w-full">
                     <thead>
@@ -94,6 +94,6 @@
                 </table>
             </div>
     </div>
-
+    <script src="js/main.js"></script>
 </body>
 </html>
