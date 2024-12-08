@@ -43,6 +43,28 @@
                         </tr>
                     </tbody>
                 </table>
+            </div> 
+            <!-- table de voitures -->
+            <div id="voitures" role="tabpanel" class="bg-white p-4 rounded-lg shadow">
+                <table class="table-auto w-full">
+                    <thead>
+                        <tr class="bg-gray-200">
+                            <th class="px-4 py-2">ID</th>
+                            <th class="px-4 py-2">Marque</th>
+                            <th class="px-4 py-2">Modele</th>
+                            <th class="px-4 py-2">Annee</th>
+                            <th class="px-4 py-2">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b text-center">
+                            <td class="px-4 py-2"></td>
+                            <td class="px-4 py-2"></td>
+                            <td class="px-4 py-2"></td>
+                            <td class="px-4 py-2"></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
