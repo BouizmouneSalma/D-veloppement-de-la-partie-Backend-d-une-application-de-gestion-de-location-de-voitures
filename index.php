@@ -66,7 +66,30 @@
                     </tbody>
                 </table>
             </div>
-        </div>
+            <!-- Contrats Table -->
+            <div id="contrats" role="tabpanel" class=" bg-white p-4 rounded-lg shadow">
+                <table class="table-auto w-full">
+                    <thead>
+                        <tr class="bg-gray-200">
+                            <th class="px-4 py-2">Client</th>
+                            <th class="px-4 py-2">Voiture</th>
+                            <th class="px-4 py-2">Date de début</th>
+                            <th class="px-4 py-2">Date de fin</th>
+                            <th class="px-4 py-2">Duree</th>
+                            <th class="px-4 py-2">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b text-center">
+                            <td class="px-4 py-2"></td>
+                            <td class="px-4 py-2"></td>
+                            <td class="px-4 py-2"></td>
+                            <td class="px-4 py-2"></td>
+                            <td class="px-4 py-2"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
     </div>
 
 </body>
