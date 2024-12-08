@@ -23,6 +23,7 @@
         <div class="tab-content">
             <!-- table de clients -->
             <div id="clients" role="tabpanel" class="bg-white p-4 rounded-lg shadow">
+            <button class="bg-blue-500 text-white py-2 px-4 rounded mb-4">Ajouter un Client</button> 
                 <table class="table-auto w-full">
                     <thead>
                         <tr class="bg-gray-200">
@@ -46,6 +47,7 @@
             </div> 
             <!-- table de voitures -->
             <div id="voitures" role="tabpanel" class="bg-white p-4 rounded-lg shadow">
+            <button class="bg-blue-500 text-white py-2 px-4 rounded mb-4" >Ajouter une Voiture</button>
                 <table class="table-auto w-full">
                     <thead>
                         <tr class="bg-gray-200">
@@ -68,6 +70,7 @@
             </div>
             <!-- Contrats Table -->
             <div id="contrats" role="tabpanel" class=" bg-white p-4 rounded-lg shadow">
+            <button class="bg-blue-500 text-white py-2 px-4 rounded mb-4">Ajouter un Contrat</button>
                 <table class="table-auto w-full">
                     <thead>
                         <tr class="bg-gray-200">
