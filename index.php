@@ -20,6 +20,31 @@
                 <button class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold py-2 px-4 rounded-t" id="contrats-tab" data-target="#contrats" type="button" role="tab">Contrats</button>
             </li>
         </ul>
+        <div class="tab-content">
+            <!-- table de clients -->
+            <div id="clients" role="tabpanel" class="bg-white p-4 rounded-lg shadow">
+                <table class="table-auto w-full">
+                    <thead>
+                        <tr class="bg-gray-200">
+                            <th class="px-4 py-2">ID</th>
+                            <th class="px-4 py-2">Nom</th>
+                            <th class="px-4 py-2">Adresse</th>
+                            <th class="px-4 py-2">Téléphone</th>
+                            <th class="px-4 py-2">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b text-center">
+                            <td class="px-4 py-2"></td>
+                            <td class="px-4 py-2"></td>
+                            <td class="px-4 py-2"></td>
+                            <td class="px-4 py-2"></td>
+                            <td class="px-4 py-2"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 
 </body>
