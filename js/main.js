@@ -12,3 +12,6 @@ const tabs = document.querySelectorAll('[role="tab"]');
         document.getElementById('cl').addEventListener('click', function() {
             document.getElementById('addClientForm').classList.toggle('hidden');
         });
+        document.getElementById('vr').addEventListener('click', function() {
+            document.getElementById('addVoitureForm').classList.toggle('hidden');
+        });
