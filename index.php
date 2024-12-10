@@ -54,7 +54,7 @@ $contrats=$query3->fetch_all(MYSQLI_ASSOC);
                             <td class="px-4 py-2"><?php echo $client['nom']?></td>
                             <td class="px-4 py-2"><?php echo $client['adresse']?></td>
                             <td class="px-4 py-2"><?php echo $client['tel']?></td>
-                            <td class="px-4 py-2 flex justify-evenly">
+                            <td class="px-1 py-2 flex justify-evenly">
                                 <button class="bg-yellow-500 text-white py-1 px-3 rounded">Modifier</button>
                                 <button class="bg-red-500 text-white py-1 px-2 rounded">Supprimer</button>
                             </td>
@@ -89,7 +89,7 @@ $contrats=$query3->fetch_all(MYSQLI_ASSOC);
                             <td class="px-4 py-2"><?php echo $voiture['marque']?></td>
                             <td class="px-4 py-2"><?php echo $voiture['modele']?></td>
                             <td class="px-4 py-2"><?php echo $voiture['annee']?></td>
-                            <td class="px-4 py-2 flex justify-evenly">
+                            <td class="px-1 py-2 flex justify-evenly">
                                 <button class="bg-yellow-500 text-white py-1 px-3 rounded">Modifier</button>
                                 <button class="bg-red-500 text-white py-1 px-2 rounded">Supprimer</button>
                             </td>
@@ -129,7 +129,7 @@ $contrats=$query3->fetch_all(MYSQLI_ASSOC);
                             <td class="px-4 py-2"><?php echo $contrat['duree']?></td>
                             <td class="px-4 py-2"><?php echo $contrat['tel']?></td>
                             <td class="px-4 py-2"><?php echo $contrat['adresse']?></td>
-                            <td class="px-4 py-2 ">
+                            <td class="px-1 py-2 flex justify-evenly ">
                                 <button class="bg-yellow-500 text-white py-1 px-3 rounded">Modifier</button>
                                 <button class="bg-red-500 text-white py-1 px-2 rounded">Supprimer</button>
                             </td>
@@ -137,7 +137,7 @@ $contrats=$query3->fetch_all(MYSQLI_ASSOC);
                     <?php endforeach; ?>
                 <?php else : ?>
                     <tr>
-                        <td colspan="6" class="text-center px-4 py-2">Aucune client trouvée.</td>
+                        <td colspan="6" class="text-center px-4 py-2">Aucune contrat trouvée.</td>
                     </tr>
                 <?php endif; ?>
                     </tbody>
