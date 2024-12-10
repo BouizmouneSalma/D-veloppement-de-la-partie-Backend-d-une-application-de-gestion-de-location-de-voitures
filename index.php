@@ -162,7 +162,7 @@ $contrats=$query3->fetch_all(MYSQLI_ASSOC);
 
 <div id="addVoitureForm" class=" hidden bg-white p-4 rounded-lg shadow">
     <h2 class="text-xl font-bold mb-4">Ajouter une Voiture</h2>
-    <form>
+    <form action="insertV.php" method="POST">
         <label class="block mb-2">Marque:</label>
         <input type="text" name="marque" class="w-full px-3 py-2 border rounded mb-4" required>
         
