@@ -4,6 +4,8 @@ include 'db.php';
 $query1 = $conn->query("SELECT * FROM client");
 $clients = $query1->fetch_all(MYSQLI_ASSOC);
 
+$query2 = $conn->query("SELECT * FROM voitures");
+$voitures = $query2->fetch_all(MYSQLI_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -77,13 +79,24 @@ $clients = $query1->fetch_all(MYSQLI_ASSOC);
                         </tr>
                     </thead>
                     <tbody>
+                    <?php if (!empty($voitures)) : ?>
+                    <?php foreach ($voitures as $voiture) : ?>
                         <tr class="border-b text-center">
-                            <td class="px-4 py-2"></td>
-                            <td class="px-4 py-2"></td>
-                            <td class="px-4 py-2"></td>
-                            <td class="px-4 py-2"></td>
+                            <td class="px-4 py-2"><?php echo $voiture['numV']?></td>
+                            <td class="px-4 py-2"><?php echo $voiture['marque']?></td>
+                            <td class="px-4 py-2"><?php echo $voiture['modele']?></td>
+                            <td class="px-4 py-2"><?php echo $voiture['annee']?></td>
+                            <td class="px-4 py-2 flex justify-evenly">
+                                <button class="bg-yellow-500 text-white py-1 px-3 rounded">Modifier</button>
+                                <button class="bg-red-500 text-white py-1 px-2 rounded">Supprimer</button>
+                            </td>
                         </tr>
-                    </tbody>
+                    <?php endforeach; ?>
+                <?php else : ?>
+                    <tr>
+                        <td colspan="6" class="text-center px-4 py-2">Aucune Voiture trouvée.</td>
+                    </tr>
+                <?php endif; ?>
                 </table>
             </div>
             <!-- Contrats Table -->
