@@ -8,5 +8,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $sql = "INSERT INTO client (nom, adresse, tel) VALUES ('$nom', '$adresse', '$tel')";
 
+    if ($conn->query($sql) === TRUE) {
+        echo "Client ajoute avec succes";
+        header("Location: index.php"); 
+        exit();
+    }
 }
 ?>
