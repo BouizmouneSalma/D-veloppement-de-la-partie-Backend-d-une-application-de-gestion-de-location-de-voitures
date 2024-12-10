@@ -113,7 +113,7 @@ $contrats=$query3->fetch_all(MYSQLI_ASSOC);
                             <th class="px-4 py-2">Date de début</th>
                             <th class="px-4 py-2">Date de fin</th>
                             <th class="px-4 py-2">Duree</th>
-                            <th class="px-4 py-2">Telephone</th>
+                            <th class="px-4 py-2">Téléphone</th>
                             <th class="px-4 py-2">Adresse</th>
                             <th class="px-4 py-2">Actions</th>
                         </tr>
@@ -144,6 +144,22 @@ $contrats=$query3->fetch_all(MYSQLI_ASSOC);
                 </table>
             </div>
     </div>
+<div id="addClientForm" class=" bg-white p-4 rounded-lg shadow">
+    <h2 class="text-xl font-bold mb-4">Ajouter un Client</h2>
+    <form>
+        <label class="block mb-2">Nom:</label>
+        <input type="text" name="nom" class="w-full px-3 py-2 border rounded mb-4" required>
+        
+        <label class="block mb-2">Adresse:</label>
+        <input type="text" name="adresse" class="w-full px-3 py-2 border rounded mb-4" required>
+        
+        <label class="block mb-2">Téléphone:</label>
+        <input type="text" name="tel" class="w-full px-3 py-2 border rounded mb-4" required>
+        
+        <button type="submit" class="bg-gray-500 text-white py-2 px-4 rounded">Ajouter</button>
+    </form>
+</div>
+
     <script src="js/main.js"></script>
 </body>
 </html>
