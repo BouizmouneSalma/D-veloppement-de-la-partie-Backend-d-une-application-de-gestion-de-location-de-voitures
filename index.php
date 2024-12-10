@@ -6,6 +6,9 @@ $clients = $query1->fetch_all(MYSQLI_ASSOC);
 
 $query2 = $conn->query("SELECT * FROM voitures");
 $voitures = $query2->fetch_all(MYSQLI_ASSOC);
+
+$query3 = $conn->query("SELECT client.nom,Contrat.numV,voitures.marque,Contrat.datedebut,Contrat.datefin,Contrat.duree,client.tel,client.adresse FROM Contrat JOIN client ON  Contrat.numC = client.numC JOIN  voitures ON Contrat.numV = Voitures.numV;");
+$contrats=$query3->fetch_all(MYSQLI_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -105,22 +108,38 @@ $voitures = $query2->fetch_all(MYSQLI_ASSOC);
                 <table class="table-auto w-full">
                     <thead>
                         <tr class="bg-gray-200">
-                            <th class="px-4 py-2">Client</th>
-                            <th class="px-4 py-2">Voiture</th>
+                        <th class="px-4 py-2">Client</th>
+                            <th class="px-4 py-2">Voiture ID</th>
                             <th class="px-4 py-2">Date de début</th>
                             <th class="px-4 py-2">Date de fin</th>
                             <th class="px-4 py-2">Duree</th>
+                            <th class="px-4 py-2">Telephone</th>
+                            <th class="px-4 py-2">Adresse</th>
                             <th class="px-4 py-2">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
+                    <?php if (!empty($contrats)) : ?>
+                    <?php foreach ($contrats as $contrat) : ?>
                         <tr class="border-b text-center">
-                            <td class="px-4 py-2"></td>
-                            <td class="px-4 py-2"></td>
-                            <td class="px-4 py-2"></td>
-                            <td class="px-4 py-2"></td>
-                            <td class="px-4 py-2"></td>
+                            <td class="px-4 py-2"><?php echo $contrat['nom']?></td>
+                            <td class="px-4 py-2"><?php echo $contrat['numV']?></td>
+                            <td class="px-4 py-2"><?php echo $contrat['datedebut']?></td>
+                            <td class="px-4 py-2"><?php echo $contrat['datefin']?></td>
+                            <td class="px-4 py-2"><?php echo $contrat['duree']?></td>
+                            <td class="px-4 py-2"><?php echo $contrat['tel']?></td>
+                            <td class="px-4 py-2"><?php echo $contrat['adresse']?></td>
+                            <td class="px-4 py-2 ">
+                                <button class="bg-yellow-500 text-white py-1 px-3 rounded">Modifier</button>
+                                <button class="bg-red-500 text-white py-1 px-2 rounded">Supprimer</button>
+                            </td>
                         </tr>
+                    <?php endforeach; ?>
+                <?php else : ?>
+                    <tr>
+                        <td colspan="6" class="text-center px-4 py-2">Aucune client trouvée.</td>
+                    </tr>
+                <?php endif; ?>
                     </tbody>
                 </table>
             </div>
