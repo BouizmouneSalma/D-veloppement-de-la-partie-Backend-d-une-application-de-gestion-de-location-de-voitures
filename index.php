@@ -144,7 +144,7 @@ $contrats=$query3->fetch_all(MYSQLI_ASSOC);
                 </table>
             </div>
     </div>
-<div id="addClientForm" class=" bg-white p-4 rounded-lg shadow">
+<div id="addClientForm" class=" hidden bg-white p-4 rounded-lg shadow">
     <h2 class="text-xl font-bold mb-4">Ajouter un Client</h2>
     <form>
         <label class="block mb-2">Nom:</label>
