@@ -1,5 +1,9 @@
 <?php
 include 'db.php';
+
+$query1 = $conn->query("SELECT * FROM client");
+$clients = $query1->fetch_all(MYSQLI_ASSOC);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,13 +42,24 @@ include 'db.php';
                         </tr>
                     </thead>
                     <tbody>
+                    <?php if (!empty($clients)) : ?>
+                    <?php foreach ($clients as $client) : ?>
                         <tr class="border-b text-center">
-                            <td class="px-4 py-2"></td>
-                            <td class="px-4 py-2"></td>
-                            <td class="px-4 py-2"></td>
-                            <td class="px-4 py-2"></td>
-                            <td class="px-4 py-2"></td>
+                            <td class="px-4 py-2"><?php echo $client['numC']?></td>
+                            <td class="px-4 py-2"><?php echo $client['nom']?></td>
+                            <td class="px-4 py-2"><?php echo $client['adresse']?></td>
+                            <td class="px-4 py-2"><?php echo $client['tel']?></td>
+                            <td class="px-4 py-2 flex justify-evenly">
+                                <button class="bg-yellow-500 text-white py-1 px-3 rounded">Modifier</button>
+                                <button class="bg-red-500 text-white py-1 px-2 rounded">Supprimer</button>
+                            </td>
                         </tr>
+                    <?php endforeach; ?>
+                <?php else : ?>
+                    <tr>
+                        <td colspan="6" class="text-center px-4 py-2">Aucune client trouvée.</td>
+                    </tr>
+                <?php endif; ?>
                     </tbody>
                 </table>
             </div> 
