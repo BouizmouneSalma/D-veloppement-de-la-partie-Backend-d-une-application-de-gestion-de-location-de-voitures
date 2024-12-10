@@ -9,3 +9,6 @@ const tabs = document.querySelectorAll('[role="tab"]');
                 tab.classList.add('active');
             });
         });
+        document.querySelector('button.bg-blue-500').addEventListener('click', function() {
+            document.getElementById('addClientForm').classList.toggle('hidden');
+        });
