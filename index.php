@@ -35,7 +35,7 @@ $contrats=$query3->fetch_all(MYSQLI_ASSOC);
         <div class="tab-content">
             <!-- table de clients -->
             <div id="clients" role="tabpanel" class="bg-white p-4 rounded-lg shadow">
-            <button class="bg-blue-500 text-white py-2 px-4 rounded mb-4">Ajouter un Client</button> 
+            <button class="bg-blue-500 text-white py-2 px-4 rounded mb-4" id="cl">Ajouter un Client</button> 
                 <table class="table-auto w-full">
                     <thead>
                         <tr class="bg-gray-200">
@@ -69,8 +69,8 @@ $contrats=$query3->fetch_all(MYSQLI_ASSOC);
                 </table>
             </div> 
             <!-- table de voitures -->
-            <div id="voitures" role="tabpanel" class="hidden bg-white p-4 rounded-lg shadow">
-            <button class="bg-blue-500 text-white py-2 px-4 rounded mb-4" >Ajouter une Voiture</button>
+            <div id="voitures" role="tabpanel" class="hidden bg-white p-4 rounded-lg shadow" >
+            <button class="bg-blue-500 text-white py-2 px-4 rounded mb-4" id="vr" >Ajouter une Voiture</button>
                 <table class="table-auto w-full">
                     <thead>
                         <tr class="bg-gray-200">
@@ -104,7 +104,7 @@ $contrats=$query3->fetch_all(MYSQLI_ASSOC);
             </div>
             <!-- Contrats Table -->
             <div id="contrats" role="tabpanel" class="hidden bg-white p-4 rounded-lg shadow">
-            <button class="bg-blue-500 text-white py-2 px-4 rounded mb-4">Ajouter un Contrat</button>
+            <button class="bg-blue-500 text-white py-2 px-4 rounded mb-4" id="ct">Ajouter un Contrat</button>
                 <table class="table-auto w-full">
                     <thead>
                         <tr class="bg-gray-200">
@@ -159,6 +159,23 @@ $contrats=$query3->fetch_all(MYSQLI_ASSOC);
         <button type="submit" class="bg-gray-500 text-white py-2 px-4 rounded">Ajouter</button>
     </form>
 </div>
+
+<div id="addVoitureForm" class=" hidden bg-white p-4 rounded-lg shadow">
+    <h2 class="text-xl font-bold mb-4">Ajouter une Voiture</h2>
+    <form>
+        <label class="block mb-2">Marque:</label>
+        <input type="text" name="marque" class="w-full px-3 py-2 border rounded mb-4" required>
+        
+        <label class="block mb-2">Modele:</label>
+        <input type="text" name="modele" class="w-full px-3 py-2 border rounded mb-4" required>
+        
+        <label class="block mb-2">Annee:</label>
+        <input type="text" name="annee" class="w-full px-3 py-2 border rounded mb-4" required>
+        
+        <button type="submit" class="bg-gray-500 text-white py-2 px-4 rounded">Ajouter</button>
+    </form>
+</div>
+
 
     <script src="js/main.js"></script>
 </body>
