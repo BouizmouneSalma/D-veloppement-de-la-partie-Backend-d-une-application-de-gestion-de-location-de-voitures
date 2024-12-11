@@ -162,7 +162,7 @@ $contrats=$query3->fetch_all(MYSQLI_ASSOC);
 
 <div id="addVoitureForm" class=" hidden bg-white p-4 rounded-lg shadow">
     <h2 class="text-xl font-bold mb-4">Ajouter une Voiture</h2>
-    <form action="insertV.php" method="POST">
+    <form action="insertVoitures.php" method="POST">
         <label class="block mb-2">Marque:</label>
         <input type="text" name="marque" class="w-full px-3 py-2 border rounded mb-4" required>
         
@@ -175,8 +175,27 @@ $contrats=$query3->fetch_all(MYSQLI_ASSOC);
         <button type="submit" class="bg-gray-500 text-white py-2 px-4 rounded">Ajouter</button>
     </form>
 </div>
-
-
+<div id="addContratForm" class=" hidden bg-white p-4 rounded-lg shadow">
+    <h2 class="text-xl font-bold mb-4">Ajouter une Contrat</h2>
+    <form action="insertContrat.php" method="POST">
+        <label class="block mb-2">ID Client:</label>
+        <input type="text" name="numC" class="w-full px-3 py-2 border rounded mb-4" required>
+        
+        <label class="block mb-2">ID Voiture:</label>
+        <input type="text" name="numV" class="w-full px-3 py-2 border rounded mb-4" required>
+        
+        <label class="block mb-2">Date de debut:</label>
+        <input type="date" name="dateDebut" class="w-full px-3 py-2 border rounded mb-4" required>
+        
+        <label class="block mb-2">Date de Fin:</label>
+        <input type="date" name="dateFin" class="w-full px-3 py-2 border rounded mb-4" required>
+        
+        <label class="block mb-2">Duree:</label>
+        <input type="text" name="duree" class="w-full px-3 py-2 border rounded mb-4" required>
+        
+        <button type="submit" class="bg-gray-500 text-white py-2 px-4 rounded">Ajouter</button>
+    </form>
+</div>
     <script src="js/main.js"></script>
 </body>
 </html>
