@@ -144,9 +144,8 @@ $contrats=$query3->fetch_all(MYSQLI_ASSOC);
                 </table>
             </div>
     </div>
-<div id="addClientForm" class=" hidden bg-white p-4 rounded-lg shadow">
-    <h2 class="text-xl font-bold mb-4">Ajouter un Client</h2>
-    <form action="insert.php" method="POST">
+<div id="addClientForm" class=" hidden fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center">
+    <form action="insert.php" method="POST" class="bg-white p-6 w-full sm:w-4/5 md:w-2/3 lg:w-1/2 xl:w-1/3 rounded-md mt-6 mx-auto">
         <label class="block mb-2">Nom:</label>
         <input type="text" name="nom" class="w-full px-3 py-2 border rounded mb-4" required>
         
@@ -160,9 +159,8 @@ $contrats=$query3->fetch_all(MYSQLI_ASSOC);
     </form>
 </div>
 
-<div id="addVoitureForm" class=" hidden bg-white p-4 rounded-lg shadow">
-    <h2 class="text-xl font-bold mb-4">Ajouter une Voiture</h2>
-    <form action="insertVoitures.php" method="POST">
+<div id="addVoitureForm" class=" hidden fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center">
+    <form action="insertVoitures.php" method="POST" class="bg-white p-6 w-full sm:w-4/5 md:w-2/3 lg:w-1/2 xl:w-1/3 rounded-md mt-6 mx-auto">
         <label class="block mb-2">Marque:</label>
         <input type="text" name="marque" class="w-full px-3 py-2 border rounded mb-4" required>
         
@@ -175,9 +173,8 @@ $contrats=$query3->fetch_all(MYSQLI_ASSOC);
         <button type="submit" class="bg-gray-500 text-white py-2 px-4 rounded">Ajouter</button>
     </form>
 </div>
-<div id="addContratForm" class=" hidden bg-white p-4 rounded-lg shadow">
-    <h2 class="text-xl font-bold mb-4">Ajouter une Contrat</h2>
-    <form action="insertContrat.php" method="POST">
+<div id="addContratForm" class=" hidden fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center">
+    <form action="insertContrat.php" method="POST" class="bg-white p-6 w-full sm:w-4/5 md:w-2/3 lg:w-1/2 xl:w-1/3 rounded-md mt-6 mx-auto">
         <label class="block mb-2">ID Client:</label>
         <input type="text" name="numC" class="w-full px-3 py-2 border rounded mb-4" required>
         
