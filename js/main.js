@@ -15,7 +15,13 @@ const tabs = document.querySelectorAll('[role="tab"]');
         document.getElementById('vr').addEventListener('click', function() {
             document.getElementById('addVoitureForm').classList.toggle('hidden');
         });
-        
+
         document.getElementById('ct').addEventListener('click', function() {
             document.getElementById('addContratForm').classList.toggle('hidden');
         });
+        function deleteClient(id) {
+            if (confirm("Êtes-vous sûr de vouloir supprimer ce client ?")) {
+                window.location.href = "deleteClient.php?id=" + id;
+            }
+        }
+

@@ -56,8 +56,8 @@ $contrats=$query3->fetch_all(MYSQLI_ASSOC);
                             <td class="px-4 py-2"><?php echo $client['tel']?></td>
                             <td class="px-1 py-2 flex justify-evenly">
                                 <button class="bg-yellow-500 text-white py-1 px-3 rounded">Modifier</button>
-                                <button class="bg-red-500 text-white py-1 px-2 rounded">Supprimer</button>
-                            </td>
+                                <button onclick="deleteClient(<?php echo $client['numC']; ?>)" class="bg-red-500 text-white py-1 px-2 rounded">Supprimer</button>
+                                </td>
                         </tr>
                     <?php endforeach; ?>
                 <?php else : ?>
@@ -131,8 +131,8 @@ $contrats=$query3->fetch_all(MYSQLI_ASSOC);
                             <td class="px-4 py-2"><?php echo $contrat['adresse']?></td>
                             <td class="px-1 py-2 flex justify-evenly ">
                                 <button class="bg-yellow-500 text-white py-1 px-3 rounded">Modifier</button>
-                                <button class="bg-red-500 text-white py-1 px-2 rounded">Supprimer</button>
-                            </td>
+                                <button onclick="deleteContrat(<?php echo $contrat['numV']; ?>, <?php echo $contrat['nom']; ?>)" class="bg-red-500 text-white py-1 px-2 rounded">Supprimer</button>
+                                </td>
                         </tr>
                     <?php endforeach; ?>
                 <?php else : ?>
