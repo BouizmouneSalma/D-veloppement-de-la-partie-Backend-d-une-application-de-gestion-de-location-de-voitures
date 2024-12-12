@@ -24,4 +24,9 @@ const tabs = document.querySelectorAll('[role="tab"]');
                 window.location.href = "deleteClient.php?id=" + id;
             }
         }
+        function deleteVoiture(id) {
+            if (confirm("Êtes-vous sûr de vouloir supprimer ce Voiture ?")) {
+                window.location.href = "deleteVoiture.php?id=" + id;
+            }
+        }
 
