@@ -1,9 +1,9 @@
 <?php
 include 'db.php';
 
-if (isset($_GET['idVoiture'])) {
-    $idVoiture = intval($_GET['idVoiture']);
-    $conn->query("DELETE  FROM Contrat WHERE numV = $idVoiture");
+if (isset($_GET['numV'])) {
+    $idContrat = intval($_GET['numL']);
+    $conn->query("DELETE  FROM Contrat WHERE numL = $idContrat");
 }
 
 header("Location: index.php");
