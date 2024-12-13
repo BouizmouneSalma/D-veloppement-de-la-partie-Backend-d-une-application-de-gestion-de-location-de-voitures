@@ -42,4 +42,10 @@ const tabs = document.querySelectorAll('[role="tab"]');
 function toggleEditClientForm() {
     document.getElementById('editClientForm').classList.add('hidden');
 }
+function editVoiturdForm() {
+    document.getElementById('editVoitureForm').classList.remove('hidden');
+}
+function toggleEditVoiturdForm() {
+    document.getElementById('editVoitureForm').classList.add('hidden');
+}
 

@@ -217,6 +217,31 @@ if(isset($_Get['$var'])){
         <button type="button" name="submit" class="bg-red-500 text-white py-2 px-4 rounded" onclick="toggleEditClientForm()">Annuler</button>
     </form>
 </div>
+<!-- Edite Voiture -->
+<?php 
+if(isset($_Get['$var'])){
+    $id = $_GET['$var'];
+    $query = $conn->query("SELECT * FROM voitures WHERE numV = $id");
+    $voiture = $query->fetch_assoc();
+}
+?>
+<div id="editVoitureForm" class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center">
+    <form action="updateVoiture.php" method="POST" class="bg-white p-6 w-full sm:w-4/5 md:w-2/3 lg:w-1/2 xl:w-1/3 rounded-md">
+        <input type="hidden" name="id" id="editVoitureId" value="<?php echo $voiture['numV']; ?>">
+
+        <label class="block mb-2">Marque :</label>
+        <input type="text" name="nom" id="editVoituremodele" class="w-full px-3 py-2 border rounded mb-4" required value="<?php echo htmlspecialchars($client['nom']); ?>">
+        
+        <label class="block mb-2">Modele :</label>
+        <input type="text" name="adresse" id="editVoituremodele" class="w-full px-3 py-2 border rounded mb-4" required value="<?php echo htmlspecialchars($client['adresse']); ?>">
+        
+        <label class="block mb-2">Annee :</label>
+        <input type="text" name="tel" id="editClientTel" class="w-full px-3 py-2 border rounded mb-4" required value="<?php echo htmlspecialchars($client['tel']); ?>">
+        
+        <button type="submit"  name="submit" class="bg-green-500 text-white py-2 px-4 rounded">Modifier</button>
+        <button type="button" name="submit" class="bg-red-500 text-white py-2 px-4 rounded" onclick="toggleEditClientForm()">Annuler</button>
+    </form>
+</div>
 
 
     <script src="js/main.js"></script>
