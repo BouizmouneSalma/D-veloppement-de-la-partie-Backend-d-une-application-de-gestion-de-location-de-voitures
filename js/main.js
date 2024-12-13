@@ -29,4 +29,17 @@ const tabs = document.querySelectorAll('[role="tab"]');
                 window.location.href = "deleteVoiture.php?id=" + id;
             }
         }
+        function deleteContrat(id) {
+            if (confirm("Êtes-vous sûr de vouloir supprimer ce Contrat ?")) {
+                window.location.href = "deleteContrat.php?id=" + id;
+            }
+        }
+
+        function editClient(id, nom, adresse, tel) {
+    document.getElementById('editClientForm').classList.remove('hidden');
+}
+
+function toggleEditClientForm() {
+    document.getElementById('editClientForm').classList.add('hidden');
+}
 

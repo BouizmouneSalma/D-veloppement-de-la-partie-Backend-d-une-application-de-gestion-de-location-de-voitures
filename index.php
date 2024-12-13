@@ -55,8 +55,8 @@ $contrats=$query3->fetch_all(MYSQLI_ASSOC);
                             <td class="px-4 py-2"><?php echo $client['adresse']?></td>
                             <td class="px-4 py-2"><?php echo $client['tel']?></td>
                             <td class="px-1 py-2 flex justify-evenly">
-                                <button class="bg-yellow-500 text-white py-1 px-3 rounded">Modifier</button>
-                                <button onclick="deleteClient(<?php echo $client['numC']; ?>)" class="bg-red-500 text-white py-1 px-2 rounded">Supprimer</button>
+                            <button onclick="editClient(<?php echo $var=$client['numC']; ?>, '<?php echo $client['nom']; ?>', '<?php echo $client['adresse']; ?>', '<?php echo $client['tel']; ?>')" class="bg-yellow-500 text-white py-1 px-3 rounded">Modifier</button>
+                            <button onclick="deleteClient(<?php echo $client['numC']; ?>)" class="bg-red-500 text-white py-1 px-2 rounded">Supprimer</button>
                                 </td>
                         </tr>
                     <?php endforeach; ?>
@@ -90,7 +90,7 @@ $contrats=$query3->fetch_all(MYSQLI_ASSOC);
                             <td class="px-4 py-2"><?php echo $voiture['modele']?></td>
                             <td class="px-4 py-2"><?php echo $voiture['annee']?></td>
                             <td class="px-1 py-2 flex justify-evenly">
-                                <button class="bg-yellow-500 text-white py-1 px-3 rounded">Modifier</button>
+                                <button class="bg-yellow-500 text-white py-1 px-3 rounded" id="MC">Modifier</button>
                                 <button onclick="deleteVoiture(<?php echo $voiture['numV']; ?>)" class="bg-red-500 text-white py-1 px-2 rounded">Supprimer</button>
                             </td>
                         </tr>
@@ -130,7 +130,7 @@ $contrats=$query3->fetch_all(MYSQLI_ASSOC);
                             <td class="px-4 py-2"><?php echo $contrat['tel']?></td>
                             <td class="px-4 py-2"><?php echo $contrat['adresse']?></td>
                             <td class="px-1 py-2 flex justify-evenly ">
-                                <button class="bg-yellow-500 text-white py-1 px-3 rounded">Modifier</button>
+                                <button class=  "bg-yellow-500 text-white py-1 px-3 rounded">Modifier</button>
                                 <button onclick="deleteContrat(<?php echo $Contrat['numL']; ?>)" class="bg-red-500 text-white py-1 px-2 rounded">Supprimer</button>
                                 </td>
                         </tr>
@@ -193,6 +193,32 @@ $contrats=$query3->fetch_all(MYSQLI_ASSOC);
         <button type="submit" class="bg-gray-500 text-white py-2 px-4 rounded">Ajouter</button>
     </form>
 </div>
+<!-- Edite Client -->
+<?php
+if(isset($_Get['$var'])){
+    $id = $_GET['$var'];
+    $query = $conn->query("SELECT * FROM client WHERE numC = $id");
+    $client = $query->fetch_assoc();
+}
+?>
+<div id="editClientForm" class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center">
+    <form action="updateClient.php" method="POST" class="bg-white p-6 w-full sm:w-4/5 md:w-2/3 lg:w-1/2 xl:w-1/3 rounded-md">
+        <input type="hidden" name="id" id="editClientId" value="<?php echo $client['numC']; ?>">
+        <label class="block mb-2">Nom :</label>
+        <input type="text" name="nom" id="editClientNom" class="w-full px-3 py-2 border rounded mb-4" required value="<?php echo htmlspecialchars($client['nom']); ?>">
+        
+        <label class="block mb-2">Adresse :</label>
+        <input type="text" name="adresse" id="editClientAdresse" class="w-full px-3 py-2 border rounded mb-4" required value="<?php echo htmlspecialchars($client['adresse']); ?>">
+        
+        <label class="block mb-2">Téléphone :</label>
+        <input type="text" name="tel" id="editClientTel" class="w-full px-3 py-2 border rounded mb-4" required value="<?php echo htmlspecialchars($client['tel']); ?>">
+        
+        <button type="submit"  name="submit" class="bg-green-500 text-white py-2 px-4 rounded">Modifier</button>
+        <button type="button" name="submit" class="bg-red-500 text-white py-2 px-4 rounded" onclick="toggleEditClientForm()">Annuler</button>
+    </form>
+</div>
+
+
     <script src="js/main.js"></script>
 </body>
 </html>
